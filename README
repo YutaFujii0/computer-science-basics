@@ -1,0 +1,30 @@
+# Computer Science Implementations
+
+# Commands
+
+$ docker build -t my-java-app .
+$ docker run -it --rm --name my-running-app my-java-app
+$ docker run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp openjdk:7 javac Main.java
+
+**create, compile, run**
+
+```java
+# Main.java
+class HelloWorldApp {
+    public static void main(String[] args) {
+        System.out.println("Hello World!"); // Display the string.
+    }
+}
+```
+
+
+```bash
+➜  computer-science docker run --rm -it -v "$PWD":/usr/src/myapp -w /usr/src/myapp openjdk:7 
+root@b7a6d0bdc690:/usr/src/myapp# javac Main.java
+-> create HelloWorldApp.class
+root@b7a6d0bdc690:/usr/src/myapp# java HelloWorldApp
+-> "Hello World!"
+```
+
+Docker Image
+https://hub.docker.com/_/openjdk
